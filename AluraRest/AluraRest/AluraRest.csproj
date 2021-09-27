@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\DTO\NovaPasta\**" />
+    <Content Remove="Data\DTO\NovaPasta\**" />
+    <EmbeddedResource Remove="Data\DTO\NovaPasta\**" />
+    <None Remove="Data\DTO\NovaPasta\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\DTO\UpdateFilmeDTO - Cópia %282%29.cs" />
+    <Compile Remove="Data\DTO\UpdateFilmeDTO - Cópia %283%29.cs" />
+    <Compile Remove="Data\DTO\UpdateFilmeDTO - Cópia.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="5.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="MySql.EntityFrameworkCore" Version="5.0.3" />
+  </ItemGroup>
+
+</Project>
