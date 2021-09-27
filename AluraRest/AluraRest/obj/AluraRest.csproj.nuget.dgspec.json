@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documentos\\CursosTI\\Desenvolvimento\\CURSO-CSHARP\\AluraRest\\AluraRest\\AluraRest.csproj": {}
+    "D:\\Documentos\\CursosTI\\Desenvolvimento\\CSHARP-CURSO\\AluraRest\\AluraRest\\AluraRest.csproj": {}
   },
   "projects": {
-    "D:\\Documentos\\CursosTI\\Desenvolvimento\\CURSO-CSHARP\\AluraRest\\AluraRest\\AluraRest.csproj": {
+    "D:\\Documentos\\CursosTI\\Desenvolvimento\\CSHARP-CURSO\\AluraRest\\AluraRest\\AluraRest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documentos\\CursosTI\\Desenvolvimento\\CURSO-CSHARP\\AluraRest\\AluraRest\\AluraRest.csproj",
+        "projectUniqueName": "D:\\Documentos\\CursosTI\\Desenvolvimento\\CSHARP-CURSO\\AluraRest\\AluraRest\\AluraRest.csproj",
         "projectName": "AluraRest",
-        "projectPath": "D:\\Documentos\\CursosTI\\Desenvolvimento\\CURSO-CSHARP\\AluraRest\\AluraRest\\AluraRest.csproj",
+        "projectPath": "D:\\Documentos\\CursosTI\\Desenvolvimento\\CSHARP-CURSO\\AluraRest\\AluraRest\\AluraRest.csproj",
         "packagesPath": "C:\\Users\\rafae\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos\\CursosTI\\Desenvolvimento\\CURSO-CSHARP\\AluraRest\\AluraRest\\obj\\",
+        "outputPath": "D:\\Documentos\\CursosTI\\Desenvolvimento\\CSHARP-CURSO\\AluraRest\\AluraRest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rafae\\AppData\\Roaming\\NuGet\\NuGet.Config",

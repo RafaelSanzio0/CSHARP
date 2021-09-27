@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tiPZQd/g5G54YgV4I2eUieuGJ/nQTVFCBzrZHgE7KQ0jkwHDGUFjQBTvqOMUc+8oSEUlbPYvwID6PDPxsOaNJA==",
+  "dgSpecHash": "JohsiQfLCdZi5DD/IZ4hPIs1yOvOMngGr5NdSaaZXytLhOirDj8ypCsnNnP0FJVM9E0vl6q8LyjYXvE3l6jQNA==",
   "success": true,
-  "projectFilePath": "D:\\Documentos\\CursosTI\\Desenvolvimento\\CURSO-CSHARP\\AluraRest\\AluraRest\\AluraRest.csproj",
+  "projectFilePath": "D:\\Documentos\\CursosTI\\Desenvolvimento\\CSHARP-CURSO\\AluraRest\\AluraRest\\AluraRest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rafae\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\rafae\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
