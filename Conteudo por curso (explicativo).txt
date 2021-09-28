@@ -1,0 +1,23 @@
+ByteBank_2021
+- primeiros passos
+- introducao a OO
+- entendendo heranca e interface
+- entendendo excecoes
+- lib dll, doc e nuget
+- strings, expressoes regulares e classe object
+- arrays e tipos genericos
+- list, lambda e linq
+- entrada e saida com streams
+
+AluraRest
+- operacoes essencias com verbos http
+- entendedo o framerowrk core
+- Dtos
+- entendendo AutoMapper
+- Relacionamento entidades 1:1 1:n n:n e consultas com linq
+
+Paralelismo-csharp
+- entendendo o conceito de paralelismo
+- entendendo async await, threadhs, isalive, start
+- gerenciador de tarefas ( delega para as threads)
+
