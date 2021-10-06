@@ -1,6 +1,7 @@
 ﻿using ByteBank.Core.Model;
 using ByteBank.Core.Repository;
 using ByteBank.Core.Service;
+using ByteBank.View.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,110 +33,144 @@ namespace ByteBank.View
             r_Servico = new ContaClienteService();
         }
 
-        private void BtnProcessar_Click(object sender, RoutedEventArgs e)
+        private async void BtnProcessar_Click(object sender, RoutedEventArgs e) // codigo assincrono
         {
-            var taskSchedullerUi = TaskScheduler.FromCurrentSynchronizationContext(); //task principal
             BtnProcessar.IsEnabled = false; // no inicio do processamento desativa o btn
 
             var contas = r_Repositorio.GetContaClientes();
 
-            var resultado = new List<string>();
+            PgsProgresso.Maximum = contas.Count();
 
-            AtualizarView(new List<string>(), TimeSpan.Zero);
+            LimparView();
 
             var inicio = DateTime.Now;
 
-            var contasTarefas = contas.Select(conta =>
-            {
-                return Task.Factory.StartNew(() => //o factory demanda as tarefas para as taskScheduller, ele gerencia!
-                {
-                    var resultadoProcessamento = r_Servico.ConsolidarMovimentacao(conta);
-                    resultado.Add(resultadoProcessamento);
-                });
-            }).ToArray(); // o to Array é necessario para "obrigar" o select(linq) a efetuar o processo para todas as contas
+            var progress = new Progress<String>(str => PgsProgresso.Value++); // progress implementado pela MS
+            //var byteBankProgress = new ByteBankProgress<String>(str => PgsProgresso.Value ++);
 
-            //Task.WaitAll(contasTarefas); // espera o processamento de todas as tarefas(contas a ser processadas) serem concluidas MAS temos o problema da interface ficar congelada
+            var resultado = await ConsolidarContas(contas, progress); //mudando pra await a gente esta retornando uma lista de string e nao uma task | estamos aguardando uma tarefa no contexto da thread inicial e tbm nao nos preocupamos mais com aquele codigo encadeado
 
-            Task.WhenAll(contasTarefas) // resolvendo o problema de congelar a UI pois o whenAll executa apos finalizar uma tarefa
-                .ContinueWith(task =>
-                {
-                    var fim = DateTime.Now;
-                    AtualizarView(resultado, fim - inicio);
-                }, taskSchedullerUi) // executa de acordo com a demanda taskSchedullerUi definido na linha 2 e resolve o erro da excecao de threadh nao permitida pois o InvalidOperationException, ocorre quando a tentativa de se acessar um objeto da Thread da interface gráfica a partir de outra Thread
-                .ContinueWith(task =>
-                {
-                    BtnProcessar.IsEnabled = true; //ativa o btn apos o processamento
-                });
-
-            /* codigo antigo - THREADS
-             
-            neste momento nao estamos trabalhando com o gerenciador de tarefas, estamos definindo individualmente
-            as quantidade de tarefas por treahds
-
-            var contasQuantidadePorThread = contas.Count() / 4; // como vou usar 4 threahds vou dividir em porcao de 4
-            var contas_parte1 = contas.Take(contasQuantidadePorThread);
-            var contas_parte2 = contas.Skip(contasQuantidadePorThread).Take(contasQuantidadePorThread);
-            var contas_parte3 = contas.Skip(contasQuantidadePorThread*2).Take(contasQuantidadePorThread);
-            var contas_parte4 = contas.Skip(contasQuantidadePorThread * 3);
-            //var contas_parte1 = contas.Take(contas.Count() / 2); //pega a primeira metade da lista
-            //var contas_parte2 = contas.Skip(contas.Count() / 2); // pula pra metade e pega essa metade
-
-            Thread thread_parte1 = new Thread(() => //processa a primeira metade da lista
-            {
-                foreach (var conta in contas_parte1)
-                {
-                    var resultadoProcessamento = r_Servico.ConsolidarMovimentacao(conta);
-                    resultado.Add(resultadoProcessamento);
-                }
-            });
-
-            Thread thread_parte2 = new Thread(() => //processa a segunda metade da lista
-            {
-                foreach (var conta in contas_parte2)
-                {
-                    var resultadoProcessamento = r_Servico.ConsolidarMovimentacao(conta);
-                    resultado.Add(resultadoProcessamento);
-                }
-            });
-
-            Thread thread_parte3 = new Thread(() => //processa a segunda metade da lista
-            {
-                foreach (var conta in contas_parte3)
-                {
-                    var resultadoProcessamento = r_Servico.ConsolidarMovimentacao(conta);
-                    resultado.Add(resultadoProcessamento);
-                }
-            });
-
-            Thread thread_parte4 = new Thread(() => //processa a segunda metade da lista
-            {
-                foreach (var conta in contas_parte4)
-                {
-                    var resultadoProcessamento = r_Servico.ConsolidarMovimentacao(conta);
-                    resultado.Add(resultadoProcessamento);
-                }
-            });
-
-            thread_parte1.Start(); // inicia o processamento da thread
-            thread_parte2.Start();
-            thread_parte3.Start();
-            thread_parte4.Start();
-            while (thread_parte1.IsAlive || thread_parte2.IsAlive || thread_parte3.IsAlive || thread_parte4.IsAlive) // verifica se as thread estao em execucao (isAlive)
-            {
-                Thread.Sleep(250); // ao inves de perguntar SEMPRE vamos perguntar uma vez e esperar o tempo definido com isso diminuimos 20s do processamento
-            }
-             */
+            var fim = DateTime.Now;
+            AtualizarView(resultado, fim - inicio);
+            BtnProcessar.IsEnabled = true;
 
         }
 
-        private void AtualizarView(List<String> result, TimeSpan elapsedTime)
+        private async Task<string[]> ConsolidarContas(IEnumerable<ContaCliente> contas, IProgress<string> reportadorDeProgresso)
+        {
+            var contasProcessadas = contas.Select(conta =>
+                Task.Factory.StartNew(() =>
+                {
+                    var resultadoConsolidacao = r_Servico.ConsolidarMovimentacao(conta);
+                    reportadorDeProgresso.Report(resultadoConsolidacao);
+                    return resultadoConsolidacao;
+                })
+             );
+               
+            return await Task.WhenAll(contasProcessadas); //retorna um array de string
+        }
+
+
+        private void LimparView()
+        {
+            LstResultados.ItemsSource = null;
+            TxtTempo.Text = null;
+            PgsProgresso.Value = 0;
+        }
+
+        private void AtualizarView(IEnumerable<String> result, TimeSpan elapsedTime)
         {
             var tempoDecorrido = $"{ elapsedTime.Seconds }.{ elapsedTime.Milliseconds} segundos!";
-            var mensagem = $"Processamento de {result.Count} clientes em {tempoDecorrido}";
+            var mensagem = $"Processamento de {result.Count()} clientes em {tempoDecorrido}";
 
             LstResultados.ItemsSource = result;
             TxtTempo.Text = mensagem;
         }
+
+        // var contasTarefas = contas.Select(conta => //
+        // {
+        //    return Task.Factory.StartNew(() => //o factory demanda as tarefas para as taskScheduller, ele gerencia!
+        //    {
+        //        var resultadoProcessamento = r_Servico.ConsolidarMovimentacao(conta);
+        //        resultado.Add(resultadoProcessamento);
+        //   });
+        //}).ToArray(); // o to Array é necessario para "obrigar" o select(linq) a efetuar o processo para todas as contas
+
+        //Task.WaitAll(contasTarefas); // espera o processamento de todas as tarefas(contas a ser processadas) serem concluidas MAS temos o problema da interface ficar congelada
+
+        // -=-=-= ISSO FOI SUBSTITUIDO PELO ASSYNC AWAIT, O COMPILADOR JA AUTOMATIZA TODO ESSE PROCESSO MANUAL -=-=-=-=
+        // ConsolidarContas(contas) // resolvendo o problema de congelar a UI pois o whenAll executa apos finalizar uma tarefa
+        //     .ContinueWith(task =>
+        //   {
+        //      var fim = DateTime.Now;
+        //     var resultados = task.Result;
+        //    AtualizarView(resultados, fim - inicio);
+        //}, taskSchedullerUi) // executa de acordo com a demanda taskSchedullerUi definido na linha 2 e resolve o erro da excecao de threadh nao permitida pois o InvalidOperationException, ocorre quando a tentativa de se acessar um objeto da Thread da interface gráfica a partir de outra Thread
+        //.ContinueWith(task =>
+        // {
+        //   BtnProcessar.IsEnabled = true; //ativa o btn apos o processamento
+        //});
+
+
+        /* codigo antigo - THREADS
+
+        neste momento nao estamos trabalhando com o gerenciador de tarefas, estamos definindo individualmente
+        as quantidade de tarefas por treahds
+
+        var contasQuantidadePorThread = contas.Count() / 4; // como vou usar 4 threahds vou dividir em porcao de 4
+        var contas_parte1 = contas.Take(contasQuantidadePorThread);
+        var contas_parte2 = contas.Skip(contasQuantidadePorThread).Take(contasQuantidadePorThread);
+        var contas_parte3 = contas.Skip(contasQuantidadePorThread*2).Take(contasQuantidadePorThread);
+        var contas_parte4 = contas.Skip(contasQuantidadePorThread * 3);
+        //var contas_parte1 = contas.Take(contas.Count() / 2); //pega a primeira metade da lista
+        //var contas_parte2 = contas.Skip(contas.Count() / 2); // pula pra metade e pega essa metade
+
+        Thread thread_parte1 = new Thread(() => //processa a primeira metade da lista
+        {
+            foreach (var conta in contas_parte1)
+            {
+                var resultadoProcessamento = r_Servico.ConsolidarMovimentacao(conta);
+                resultado.Add(resultadoProcessamento);
+            }
+        });
+
+        Thread thread_parte2 = new Thread(() => //processa a segunda metade da lista
+        {
+            foreach (var conta in contas_parte2)
+            {
+                var resultadoProcessamento = r_Servico.ConsolidarMovimentacao(conta);
+                resultado.Add(resultadoProcessamento);
+            }
+        });
+
+        Thread thread_parte3 = new Thread(() => //processa a segunda metade da lista
+        {
+            foreach (var conta in contas_parte3)
+            {
+                var resultadoProcessamento = r_Servico.ConsolidarMovimentacao(conta);
+                resultado.Add(resultadoProcessamento);
+            }
+        });
+
+        Thread thread_parte4 = new Thread(() => //processa a segunda metade da lista
+        {
+            foreach (var conta in contas_parte4)
+            {
+                var resultadoProcessamento = r_Servico.ConsolidarMovimentacao(conta);
+                resultado.Add(resultadoProcessamento);
+            }
+        });
+
+        thread_parte1.Start(); // inicia o processamento da thread
+        thread_parte2.Start();
+        thread_parte3.Start();
+        thread_parte4.Start();
+        while (thread_parte1.IsAlive || thread_parte2.IsAlive || thread_parte3.IsAlive || thread_parte4.IsAlive) // verifica se as thread estao em execucao (isAlive)
+        {
+            Thread.Sleep(250); // ao inves de perguntar SEMPRE vamos perguntar uma vez e esperar o tempo definido com isso diminuimos 20s do processamento
+        }
+         */
+
     }
 }
 
@@ -226,5 +261,35 @@ download.IniciarDownload().ContinueWith(() => FimDownload());
 
 
 Correta. ContinueWith é o método correto que nos permite encadear a execução de uma tarefa em outra
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+No código var A = CalculaRaiz(100); qual será o tipo da variável A?
+
+private async Task<double> CalculaRaiz(double num)
+{
+    return await Task.Run(() => Math.Sqrt(num));
+}
+
+Task<double>, pois é, de fato, o tipo retornado por CalculaRaiz e na atribuição não há o uso da palavra chave await
+Correta. Como não foi feito uso da palavra chave await na atribuição da variável A, o compilador não interpreta que estamos interessados no valor de retorno da tarefa e sim no tipo Task<double>
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+O que o compilador faz no código abaixo?
+
+01 | btnCalcular.IsEnabled = false;
+02 | var A = await CalculaRaiz(100);
+03 | btnCalcular.IsEnabled = true;
+
+O compilador reescreve o código de forma que a linha 2 seja executada em uma Task e a linha 3 seja executada de forma encadeada, mas no mesmo contexto da linha 1
+Correta. Esta é uma das grandes motivações do async/await. O contexto da linha 1 é preservado e mantido na execução da linha 3
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Por que não precisamos nos preocupar com contexto de sincronização ao usarmos a classe Progress<T>
+
+Porque um objeto do tipo Progress<T> sempre captura o contexto de sincronização do TaskScheduler da thread que criou sua instância
+Correta. O objeto Progress<T> captura o contexto da thread que criou sua instância
 
 */
