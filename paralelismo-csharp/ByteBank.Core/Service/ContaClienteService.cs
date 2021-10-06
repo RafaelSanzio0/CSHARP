@@ -12,7 +12,7 @@ namespace ByteBank.Core.Service
     {
         public string ConsolidarMovimentacao(ContaCliente conta)
         {
-            return ConsolidarMovimentacao(conta, CancellationToken.None);
+            return ConsolidarMovimentacao(conta, CancellationToken.None); // exemplo de sobrecarga
         }
 
         public string ConsolidarMovimentacao(ContaCliente conta, CancellationToken ct)

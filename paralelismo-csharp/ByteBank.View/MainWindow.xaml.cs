@@ -24,6 +24,7 @@ namespace ByteBank.View
     {
         private readonly ContaClienteRepository r_Repositorio;
         private readonly ContaClienteService r_Servico;
+        private CancellationTokenSource _cts;
 
         public MainWindow()
         {
@@ -33,9 +34,19 @@ namespace ByteBank.View
             r_Servico = new ContaClienteService();
         }
 
+        private void BtnCancelar_click(object sender, RoutedEventArgs e)
+        {
+            BtnCancelar.IsEnabled = false;
+            _cts.Cancel(); // reposavel por notificar o token e todos os lugares q utilizam o token vao saber
+           
+
+        }
+
         private async void BtnProcessar_Click(object sender, RoutedEventArgs e) // codigo assincrono
         {
             BtnProcessar.IsEnabled = false; // no inicio do processamento desativa o btn
+
+            _cts = new CancellationTokenSource(); // instancia um novo cancelatino token ao ter uma acao no btn
 
             var contas = r_Repositorio.GetContaClientes();
 
@@ -45,26 +56,51 @@ namespace ByteBank.View
 
             var inicio = DateTime.Now;
 
+            BtnCancelar.IsEnabled = true; //ativa o botao d cancelar pos processamento
+
             var progress = new Progress<String>(str => PgsProgresso.Value++); // progress implementado pela MS
             //var byteBankProgress = new ByteBankProgress<String>(str => PgsProgresso.Value ++);
 
-            var resultado = await ConsolidarContas(contas, progress); //mudando pra await a gente esta retornando uma lista de string e nao uma task | estamos aguardando uma tarefa no contexto da thread inicial e tbm nao nos preocupamos mais com aquele codigo encadeado
-
-            var fim = DateTime.Now;
-            AtualizarView(resultado, fim - inicio);
-            BtnProcessar.IsEnabled = true;
+            try
+            {//colocamos o try aqui pq foi identificado uma excecao sendo lancada inicialmente aqui
+                var resultado = await ConsolidarContas(contas, progress, _cts.Token); //mudando pra await a gente esta retornando uma lista de string e nao uma task | estamos aguardando uma tarefa no contexto da thread inicial e tbm nao nos preocupamos mais com aquele codigo encadeado
+                var fim = DateTime.Now;
+                AtualizarView(resultado, fim - inicio);
+                BtnProcessar.IsEnabled = true;
+            }
+            catch (OperationCanceledException)
+            {
+                TxtTempo.Text = "Operacao cancelada"; 
+            }
+            finally
+            {
+                BtnProcessar.IsEnabled = true;
+                BtnCancelar.IsEnabled = false;
+            }
 
         }
 
-        private async Task<string[]> ConsolidarContas(IEnumerable<ContaCliente> contas, IProgress<string> reportadorDeProgresso)
+        private async Task<string[]> ConsolidarContas(IEnumerable<ContaCliente> contas, IProgress<string> reportadorDeProgresso, CancellationToken ct)
         {
             var contasProcessadas = contas.Select(conta =>
                 Task.Factory.StartNew(() =>
                 {
+                    // if (ct.IsCancellationRequested) // convercao colocar antes e 
+                    // {
+                    //     throw new OperationCanceledException(ct);
+                    //   }
+
+                    ct.ThrowIfCancellationRequested(); //mesma coisa do if acima
                     var resultadoConsolidacao = r_Servico.ConsolidarMovimentacao(conta);
                     reportadorDeProgresso.Report(resultadoConsolidacao);
+                    //if (ct.IsCancellationRequested) // depois a opcao de cancelar
+                    //{
+                    //   throw new OperationCanceledException(ct);
+                    //}
+                    ct.ThrowIfCancellationRequested();
+
                     return resultadoConsolidacao;
-                })
+                },ct) // passando o cancelationtoken dessa maneira como segundo parametro o task scheduller verifica antes de iniciar todo o prcoessamento que a tarefa ja foi cancelada
              );
                
             return await Task.WhenAll(contasProcessadas); //retorna um array de string
@@ -292,4 +328,14 @@ Por que não precisamos nos preocupar com contexto de sincronização ao usarmos
 Porque um objeto do tipo Progress<T> sempre captura o contexto de sincronização do TaskScheduler da thread que criou sua instância
 Correta. O objeto Progress<T> captura o contexto da thread que criou sua instância
 
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Em que momento uma exceção do tipo OperationCanceledException é lançada?
+No momento em que o método ThrowIfCancellationRequested de um objeto do tipo CancellationToken é invocado
+Correta. O método ThrowIfCancellationRequested sempre lança uma exceção quando há uma solicitação de cancelamento
+
+Ao lançarmos manualmente, após verificarmos que a propriedade IsCancellationRequested é verdadeira
+Correta. É uma prática comum lançar a exceção manualmente, após verificar-se a propriedade IsCancellationRequested, pois ainda podemos reverter alguma ação, caso necessário
 */
