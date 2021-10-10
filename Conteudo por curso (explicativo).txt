@@ -20,4 +20,9 @@ Paralelismo-csharp
 - entendendo o conceito de paralelismo
 - entendendo async await, threadhs, isalive, start
 - gerenciador de tarefas ( delega para as threads)
+- padroes de progresso
+- padroes de cancelamento
 
+
+Udemy-Netcore
+- Introducao ao .NETCORE (Entity framework, Api e microservice, rotas rest resfull, DDD)

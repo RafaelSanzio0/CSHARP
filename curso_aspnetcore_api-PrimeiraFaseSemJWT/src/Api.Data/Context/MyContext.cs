@@ -6,8 +6,8 @@ namespace Api.Data.Context {
     public class MyContext : DbContext {
         public DbSet<UserEntity> Users { get; set; }
 
-        public MyContext (DbContextOptions<MyContext> options) : base (options) {
-            Database.Migrate ();
+        public MyContext (DbContextOptions<MyContext> options) : base (options) { // eu quero que vc herde do pai o construtor tal
+            Database.Migrate();
         }
 
         protected override void OnModelCreating (ModelBuilder modelBuilder) {
@@ -17,3 +17,9 @@ namespace Api.Data.Context {
 
     }
 }
+
+/*
+ * contexto é o cara que recebe as tabelas relacionadas a entidade que esta na dominio
+ * 
+ * 
+ */
