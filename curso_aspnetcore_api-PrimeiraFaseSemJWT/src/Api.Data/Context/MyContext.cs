@@ -12,7 +12,7 @@ namespace Api.Data.Context {
 
         protected override void OnModelCreating (ModelBuilder modelBuilder) {
             base.OnModelCreating (modelBuilder);
-            modelBuilder.Entity<UserEntity> (new UserMap ().Configure);
+            modelBuilder.Entity<UserEntity> (new UserMap ().Configure); //cria um novo usermap configurado com o configure da UserMap
         }
 
     }
