@@ -13,4 +13,4 @@ namespace Api.Domain.Interfaces.Services.User {
     }
 }
 // deixar generico futuramente
-// a camada de aplication que trabalha com esses metodos da servie
+// a camada de aplication que trabalha com esses metodos da service

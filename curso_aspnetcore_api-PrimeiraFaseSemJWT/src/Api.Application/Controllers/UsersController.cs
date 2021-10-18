@@ -7,28 +7,35 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Application.Controllers {
 
-    [Route ("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class UsersController : ControllerBase {
+
         private IUserService _service;
+
         public UsersController (IUserService service) {
             _service = service;
         }
 
         [HttpGet]
-        public async Task<ActionResult> GetAll () {
-            if (!ModelState.IsValid) {
-                return BadRequest (ModelState); //400 bad request - solicitação inválida
+        public async Task<ActionResult> GetAll()
+        {
+            if (!ModelState.IsValid) //senao for valido por exemplo tipo de dado invalido
+            {
+                return BadRequest(ModelState);
             }
 
-            try {
-                return Ok (await _service.GetAll ());
-
-            } catch (ArgumentException e) {
-
-                return StatusCode ((int) HttpStatusCode.InternalServerError, e.Message);
+            try
+            {
+                var response = await _service.GetAll();
+                return Ok(response);
+            }
+            catch(ArgumentException e)
+            {
+                return StatusCode((int) HttpStatusCode.InternalServerError, e.Message);
             }
         }
+
 
         [HttpGet]
         [Route ("{id}", Name = "GetWithId")]
