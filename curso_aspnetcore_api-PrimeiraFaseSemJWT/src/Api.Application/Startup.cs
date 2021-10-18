@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace Application {
@@ -28,20 +29,22 @@ namespace Application {
             ConfigureService.ConfigureDependenciesService(services);
             ConfigureRepository.ConfigureDependenciesRepository(services);
 
-            services.AddSwaggerGen (c => {
-                c.SwaggerDoc ("v1",
-                    new Info {
-                        Title = "Curso de AspNetCore 2.2",
-                            Version = "v1",
-                            Description = "Exemplo de API REST criada com o ASP.NET Core",
-                            Contact = new Contact {
-                                Name = "Marcos Fabricio Rosa",
-                                    Url = "https://github.com/mfrinfo"
-                            }
-                    });
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Curso de Api com ApsNetCore 3.1",
+                    Description = "Arquitetura DDD",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Rafael Sanzio",
+                        Email = "RafaelQA@gmail.com"
+                    }
+                });
             });
 
-            services.AddMvc ().SetCompatibilityVersion (CompatibilityVersion.Version_2_2);
+            services.AddMvc(option => option.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,19 +53,15 @@ namespace Application {
                 app.UseDeveloperExceptionPage ();
             }
 
+            
             // Ativando middlewares para uso do Swagger
             app.UseSwagger ();
             app.UseSwaggerUI (c => {
-                c.RoutePrefix = string.Empty;
-                c.SwaggerEndpoint ("/swagger/v1/swagger.json", "Curso de API com AspNetCore 2.2");
+                c.SwaggerEndpoint ("/swagger/v1/swagger.json", "Curso de API com AspNetCore 3.1");
+                c.RoutePrefix = "swagger"; // swagger/index.html
             });
-
-            // Redireciona o Link para o Swagger, quando acessar a rota principal
-            var option = new RewriteOptions ();
-            option.AddRedirect ("^$", "swagger");
-            app.UseRewriter (option);
-
-            app.UseMvc ();
+                
+            app.UseMvc();
         }
     }
 }
