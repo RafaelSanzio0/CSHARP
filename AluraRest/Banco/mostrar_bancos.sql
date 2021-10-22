@@ -20,6 +20,6 @@ desc filmes;
 select * from filmes;
 
 USE cinemadb;
-desc sessoes
+desc sessoes;
 select * from sessoes;
 
