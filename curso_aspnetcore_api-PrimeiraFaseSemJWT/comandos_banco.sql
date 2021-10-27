@@ -1,0 +1,2 @@
+USE UdemyDB
+SELECT * FROM [User]

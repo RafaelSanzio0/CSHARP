@@ -30,7 +30,7 @@ namespace Application {
         public void ConfigureServices(IServiceCollection services) {
 
             ConfigureService.ConfigureDependenciesService(services);
-            ConfigureRepository.ConfigureDependenciesRepository(services);
+            ConfigureRepository.ConfigureDependenciesRepository(services, Configuration);
 
             var signingConfigurations = new SigningConfigurations(); // injecao de dependencias diferente pois n utilizamos interface no contexto de jwt
             services.AddSingleton(signingConfigurations);
