@@ -106,6 +106,9 @@ namespace Application {
             });
 
             services.AddMvc(option => option.EnableEndpointRouting = false);
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); // configuracao do automapper
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
