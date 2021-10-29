@@ -7,7 +7,7 @@ using System.Text;
 
 namespace CrossCutting.Mappings
 {
-    class ModelToEntityProfile : Profile
+    public class ModelToEntityProfile : Profile
     {
         public ModelToEntityProfile()
         {
