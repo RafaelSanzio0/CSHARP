@@ -26,8 +26,8 @@ namespace Api.Service.Test
 
             var result = await _service.Post(createUserDTO);
             Assert.NotNull(result);
-            Assert.Equal(readUserCreateDTO.Name, result.Name);
-            Assert.Equal(readUserCreateDTO.Email, result.Email);
+            Assert.Equal(NomeUsuario, result.Name);
+            Assert.Equal(EmailUsuario, result.Email);
 
         }
     }

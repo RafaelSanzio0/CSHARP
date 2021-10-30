@@ -84,11 +84,10 @@ namespace Api.Service.Test.Usuario
             readUserUpdateDTO = new ReadUserUpdateDTO
             {
                 Id = IdUsuario,
-                Name = NomeUsuario,
-                Email = EmailUsuario,
+                Name = NomeUsuarioAlterado,
+                Email = EmailUsuarioAlterado,
                 UpdateAt = DateTime.UtcNow
             };
-
 
         }
     }

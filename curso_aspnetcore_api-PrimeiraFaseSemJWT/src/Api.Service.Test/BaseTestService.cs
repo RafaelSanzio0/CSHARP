@@ -13,15 +13,22 @@ namespace Api.Service.Test
 
         public BaseTestService()
         {
-           // Mapper = new AutoMapperFixture().GetMapper(services); // chama as config do mapper
+            Mapper = new AutoMapperFixture().GetMapper(); // chama as config do mapper
         }
     }
 
     public class AutoMapperFixture : IDisposable
     {
-        public IMapper GetMapper(IServiceCollection services)
+        public IMapper GetMapper()
         {
-            return (IMapper) services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            var config = new MapperConfiguration(config =>
+            {
+                config.AddProfile(new ModelToEntityProfile());
+                config.AddProfile(new DtoToEntityProfile());
+                config.AddProfile(new DtoToModelProfile());
+            });
+
+            return config.CreateMapper();
         }
 
         public void Dispose()
