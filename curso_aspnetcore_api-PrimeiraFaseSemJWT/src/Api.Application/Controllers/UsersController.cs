@@ -79,13 +79,13 @@ namespace Api.Application.Controllers {
                 }
                 else
                 {
-                    return BadRequest();
+                    return BadRequest(); // tentar simular esse erro
                 }
 
             }
             catch (ArgumentException e)
             {
-                return StatusCode((int) HttpStatusCode.InternalServerError, e.Message);
+                return StatusCode((int) HttpStatusCode.InternalServerError, e.Message); //e esse
             }
         }
 

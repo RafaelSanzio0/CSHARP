@@ -1,21 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Api.Application\Application.csproj", "{A04ED2A6-C185-42F8-B01C-25949BF86CB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Api.Application\Application.csproj", "{A04ED2A6-C185-42F8-B01C-25949BF86CB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Api.Domain\Domain.csproj", "{5E0EF588-8129-42C2-96D9-4B46891ACA9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Api.Domain\Domain.csproj", "{5E0EF588-8129-42C2-96D9-4B46891ACA9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossCutting", "Api.CrossCutting\CrossCutting.csproj", "{6594FAA7-629C-4FAD-8D56-0F1E4F54C855}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrossCutting", "Api.CrossCutting\CrossCutting.csproj", "{6594FAA7-629C-4FAD-8D56-0F1E4F54C855}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Api.Data\Data.csproj", "{521789C5-67CA-44EA-AB34-8D6D8C8A5BFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Api.Data\Data.csproj", "{521789C5-67CA-44EA-AB34-8D6D8C8A5BFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Api.Service\Service.csproj", "{750272A0-9366-49E7-9563-B3D0A9ACE91E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Api.Service\Service.csproj", "{750272A0-9366-49E7-9563-B3D0A9ACE91E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Data.Test", "Api.Data.Test\Api.Data.Test.csproj", "{9FA9BB80-70EE-4E85-980A-6D67274F49DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Data.Test", "Api.Data.Test\Api.Data.Test.csproj", "{9FA9BB80-70EE-4E85-980A-6D67274F49DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Service.Test", "Api.Service.Test\Api.Service.Test.csproj", "{F2A1AD66-9EBA-4898-8CF0-CEEC42E29BFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Service.Test", "Api.Service.Test\Api.Service.Test.csproj", "{F2A1AD66-9EBA-4898-8CF0-CEEC42E29BFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Application.Test", "Api.Application.Test\Api.Application.Test.csproj", "{5862F5B4-3DED-4E0B-90EE-FBB08C48BFF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,9 +27,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A04ED2A6-C185-42F8-B01C-25949BF86CB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -114,5 +113,23 @@ Global
 		{F2A1AD66-9EBA-4898-8CF0-CEEC42E29BFA}.Release|x64.Build.0 = Release|Any CPU
 		{F2A1AD66-9EBA-4898-8CF0-CEEC42E29BFA}.Release|x86.ActiveCfg = Release|Any CPU
 		{F2A1AD66-9EBA-4898-8CF0-CEEC42E29BFA}.Release|x86.Build.0 = Release|Any CPU
+		{5862F5B4-3DED-4E0B-90EE-FBB08C48BFF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5862F5B4-3DED-4E0B-90EE-FBB08C48BFF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5862F5B4-3DED-4E0B-90EE-FBB08C48BFF6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5862F5B4-3DED-4E0B-90EE-FBB08C48BFF6}.Debug|x64.Build.0 = Debug|Any CPU
+		{5862F5B4-3DED-4E0B-90EE-FBB08C48BFF6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5862F5B4-3DED-4E0B-90EE-FBB08C48BFF6}.Debug|x86.Build.0 = Debug|Any CPU
+		{5862F5B4-3DED-4E0B-90EE-FBB08C48BFF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5862F5B4-3DED-4E0B-90EE-FBB08C48BFF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5862F5B4-3DED-4E0B-90EE-FBB08C48BFF6}.Release|x64.ActiveCfg = Release|Any CPU
+		{5862F5B4-3DED-4E0B-90EE-FBB08C48BFF6}.Release|x64.Build.0 = Release|Any CPU
+		{5862F5B4-3DED-4E0B-90EE-FBB08C48BFF6}.Release|x86.ActiveCfg = Release|Any CPU
+		{5862F5B4-3DED-4E0B-90EE-FBB08C48BFF6}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CA4F41F5-8252-4FED-B524-A18766029A7B}
 	EndGlobalSection
 EndGlobal
