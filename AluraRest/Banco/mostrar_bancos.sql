@@ -23,3 +23,8 @@ USE cinemadb;
 desc sessoes;
 select * from sessoes;
 
+USE udemydb;
+desc User;
+select * from User;
+
+

@@ -1,3 +1,3 @@
 dotnet ef migrations add First_Migration  ****** criar migration
-dotnet new xunit -n Api.Data.Test -o Api.Data.Test ***** cria projeto de teste
-dotnet sln add Api.Data.Test\ ****** adiciona o projeto a solution
+dotnet new xunit -n Api.Integration.Test -o Api.Integration.Test ***** cria projeto de teste
+dotnet sln add Api.Integration.Test\ ****** adiciona o projeto a solution
