@@ -18,9 +18,8 @@ namespace Domain.Entities
         [Required]
         public Guid UfID { get; set; } // chave FK da classe UfEntity
 
-        [Required] //talvez seja preciso tirar na hr de criar um municipio sem cep
         public UfEntity UfEntity { get; set; } // um municipio possui 1 uf
 
-        public IEnumerable<CepEntity> CepEntities { get; set; } // um municip possui N cep
+        public IEnumerable<CepEntity> CepEntities { get; set; } // um municipio possui N cep
     }
 }

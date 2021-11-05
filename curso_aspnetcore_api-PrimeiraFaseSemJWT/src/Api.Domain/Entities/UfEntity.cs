@@ -17,4 +17,5 @@ namespace Domain.Entities
         public string Nome { get; set; }
 
         public IEnumerable<MunicipioEntity> MunicipioEntities { get; set; } // um UF possui N municipios
+    }
 }
