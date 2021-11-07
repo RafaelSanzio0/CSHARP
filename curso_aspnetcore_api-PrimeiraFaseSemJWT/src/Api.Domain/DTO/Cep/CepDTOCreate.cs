@@ -13,7 +13,6 @@ namespace Domain.DTO.Cep
         [Required(ErrorMessage = "Campo Logradouro obrigatório")]
         public string Logradouro { get; set; }
 
-        [Required(ErrorMessage = "Campo Numero obrigatório")]
         public string Numero { get; set; }
 
         [Required(ErrorMessage = "Campo MunicipioID obrigatório")]
