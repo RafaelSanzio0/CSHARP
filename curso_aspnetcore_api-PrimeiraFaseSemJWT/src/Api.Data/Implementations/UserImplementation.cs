@@ -15,8 +15,8 @@ namespace Data.Implementations
         private DbSet<UserEntity> _dataset;
 
         public UserImplementation(MyContext context) : base(context)
-        {  
-             _dataset = context.Set<UserEntity>();
+        {
+            _dataset = context.Set<UserEntity>();
         }
 
         public async Task<UserEntity> FindByLogin(string email) //serve para encontrar o email que o usuario passou no momento do login

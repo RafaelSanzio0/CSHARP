@@ -11,10 +11,12 @@ namespace Api.Data.Repository {
 
         protected readonly MyContext _context; //INJECAO DE DEPENDENCIA
         private DbSet<T> _dataset; //trabalha com qualquer tipo de table
+
         public BaseRepository (MyContext context) { //TODA VEZ QUE A CLASSE É INSTANCIADA EU PEGO O CONTEXTO E PASSO PARA A VARIAVEL ABAIXO, AI SIM VOU CONSEGUIR ENXEGAR O CONTEXTO EM TODA MINHA CLASSE
             _context = context;
             _dataset = _context.Set<T>(); //ao inves de toda vez ter que setar o _context.Set<t> já defino apenas uma vez
         }
+
         public async Task<bool> DeleteAsync(Guid id)
         {
             try

@@ -1,4 +1,5 @@
 ﻿using Domain.DTO.Uf;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,7 +16,7 @@ namespace Domain.DTO.Municipio
 
         public Guid UfId { get; set; }
 
-        public UfDTO Uf { get; set; }
+        public UfDTO UfEntity { get; set; }
     }
 }
 
