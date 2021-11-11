@@ -15,10 +15,7 @@ namespace CrossCutting.Mappings
     {
         public DtoToEntityProfile()
         {
-            // USER
-            CreateMap<CreateUserDTO, UserEntity>()
-                .ReverseMap();
-
+            #region User
             CreateMap<ReadUserCreateDTO, UserEntity>()
                 .ReverseMap();
 
@@ -27,47 +24,40 @@ namespace CrossCutting.Mappings
 
             CreateMap<UserDTO, UserEntity>()
                 .ReverseMap();
+            #endregion
 
-            // UF
+            #region Uf
             CreateMap<UfDTO, UfEntity>()
                 .ReverseMap();
+            #endregion
 
-            // Municipio
+            #region Municipio
             CreateMap<MunicipioDTO, MunicipioEntity>()
                 .ReverseMap();
 
             CreateMap<MunicipioDTOCompleto, MunicipioEntity>()
                 .ReverseMap();
 
-            CreateMap<MunicipioDTOCreate, MunicipioEntity>()
-                .ReverseMap();
-
             CreateMap<MunicipioDTOCreateResult, MunicipioEntity>()
                 .ReverseMap();
-
-            CreateMap<MunicipioDTOUpdate, MunicipioEntity>()
-                .ReverseMap();
-
+      
             CreateMap<MunicipioDTOUpdateResult, MunicipioEntity>()
                 .ReverseMap();
+            #endregion
 
-            // Cep
+            #region Cep
             CreateMap<CepDTO, CepEntity>()
                .ReverseMap();
-
-            CreateMap<CepDTOCreate, CepEntity>()
-                .ReverseMap();
 
             CreateMap<CepDTOCreateResult, CepEntity>()
                 .ReverseMap();
 
-            CreateMap<CepDTOUpdate, CepEntity>()
-                .ReverseMap();
-
             CreateMap<CepDTOUpdateResult, CepEntity>()
                 .ReverseMap();
+            #endregion
         }
     }
 }
 
 // to la na data eu devolvo o resultado como DTO ou vice versa
+// nao colocamos o create e update pois a entidade devolve para os result pq o create e update é recebido la na API

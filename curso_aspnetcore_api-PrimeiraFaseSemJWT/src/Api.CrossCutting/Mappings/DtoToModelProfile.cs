@@ -14,7 +14,7 @@ namespace CrossCutting.Mappings
     {
         public DtoToModelProfile()
         {
-            // USER
+            #region User
             CreateMap<CreateUserDTO, UserModel>()  //converte do <source, destino>
                 .ReverseMap(); // conversao ao contraria
 
@@ -23,12 +23,14 @@ namespace CrossCutting.Mappings
 
             CreateMap<UserDTO, UserModel>()
                 .ReverseMap();
+            #endregion
 
-            // UF
+            #region Uf
             CreateMap<UfDTO, UfModel>()
                 .ReverseMap();
+            #endregion
 
-            // Municipio
+            #region Municipio
             CreateMap<MunicipioDTOCreate, MunicipioModel>()
                 .ReverseMap();
 
@@ -40,8 +42,9 @@ namespace CrossCutting.Mappings
 
             CreateMap<MunicipioDTOUpdate, MunicipioModel>()
                 .ReverseMap();
+            #endregion
 
-            // CEP
+            #region Cep
             CreateMap<CepDTO, CepModel>()
                 .ReverseMap();
 
@@ -50,7 +53,7 @@ namespace CrossCutting.Mappings
 
             CreateMap<CepDTOUpdate, CepModel>()
                 .ReverseMap();
-
+            #endregion
         }
     }
 }
