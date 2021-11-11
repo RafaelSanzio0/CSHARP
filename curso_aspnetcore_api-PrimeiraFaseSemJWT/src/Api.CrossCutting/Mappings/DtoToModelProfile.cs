@@ -1,4 +1,7 @@
 ﻿using AutoMapper;
+using Domain.DTO.Cep;
+using Domain.DTO.Municipio;
+using Domain.DTO.Uf;
 using Domain.DTO.User;
 using Domain.Models;
 using System;
@@ -11,12 +14,43 @@ namespace CrossCutting.Mappings
     {
         public DtoToModelProfile()
         {
+            // USER
             CreateMap<CreateUserDTO, UserModel>()  //converte do <source, destino>
-                .ReverseMap();  // conversao ao contraria
+                .ReverseMap(); // conversao ao contraria
+
             CreateMap<UpdateUserDTO, UserModel>()  
                 .ReverseMap();
+
             CreateMap<UserDTO, UserModel>()
                 .ReverseMap();
+
+            // UF
+            CreateMap<UfDTO, UfModel>()
+                .ReverseMap();
+
+            // Municipio
+            CreateMap<MunicipioDTOCreate, MunicipioModel>()
+                .ReverseMap();
+
+            CreateMap<MunicipioDTOCompleto, MunicipioModel>()
+                .ReverseMap();
+
+            CreateMap<MunicipioDTO, MunicipioModel>()
+                .ReverseMap();
+
+            CreateMap<MunicipioDTOUpdate, MunicipioModel>()
+                .ReverseMap();
+
+            // CEP
+            CreateMap<CepDTO, CepModel>()
+                .ReverseMap();
+
+            CreateMap<CepDTOCreate, CepModel>()
+                .ReverseMap();
+
+            CreateMap<CepDTOUpdate, CepModel>()
+                .ReverseMap();
+
         }
     }
 }
