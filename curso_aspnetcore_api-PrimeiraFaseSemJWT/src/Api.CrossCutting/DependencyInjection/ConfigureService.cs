@@ -1,6 +1,7 @@
 using Api.Domain.Interfaces.Services.User;
 using Api.Service.Services;
 using Domain.Interfaces;
+using Domain.Interfaces.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Service.Services;
 
@@ -9,6 +10,9 @@ namespace Api.CrossCutting.DependencyInjection {
         public static void ConfigureDependenciesService (IServiceCollection serviceCollection) {
             serviceCollection.AddTransient<IUserService, UserService>(); //cria uma nova instancia de UserService
             serviceCollection.AddTransient<ILoginService, LoginService>(); //toda vez que injeto a IloginService estou fazendo uso da LoginService
+            serviceCollection.AddTransient<IUfService, UfService>();
+            serviceCollection.AddTransient<IMunicipioService, MunicipioService>();
+            serviceCollection.AddTransient<ICepService, CepService>();
         }
     }
 }
