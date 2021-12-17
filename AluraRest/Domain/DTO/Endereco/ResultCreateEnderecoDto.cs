@@ -6,22 +6,19 @@ using System.Threading.Tasks;
 
 namespace AluraRest.Data.DTO
 {
-    public class ReadyEnderecoDTO
+    public class ResultCreateEnderecoDto
     {
-        [Required(ErrorMessage = "O campo ID é obrigatorio")]
-        [Key]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "O campo Logradouro é obrigatorio")]
         public string Logradouro { get; set; }
 
-        [Required(ErrorMessage = "O campo Bairro é obrigatorio")]
         public string Bairro { get; set; }
 
-        [Required(ErrorMessage = "O campo Numero é obrigatorio")]
         public int Numero { get; set; }
 
         public DateTime HoraDaConsulta { get; set; }
+
+        public DateTime CreateAt { get; set; }
 
     }
 }

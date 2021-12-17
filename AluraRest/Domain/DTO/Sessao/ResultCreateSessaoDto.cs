@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace AluraRest.Data.DTO.Sessao
 {
-    public class ReadSessaoDTO
+    public class ResultCreateSessaoDto
     {
         public int id { get; set; }
         public FilmeModel Filme { get; set; }
-        public Cinema Cinema { get; set; }
+        public CinemaModel Cinema { get; set; }
         public DateTime HorarioDeEncerramento { get; set; }
         public DateTime HorarioDeInicio { get; set; }
-
+        public DateTime CreateAt { get; set; }
     }
 }

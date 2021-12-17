@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AluraRest.Data.DTO
 {
-    public class CreateEnderecoDTO
+    public class CreateEnderecoDto
     {
 
         [Required(ErrorMessage = "O campo Logradouro é obrigatorio")]

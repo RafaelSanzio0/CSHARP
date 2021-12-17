@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace AluraRest.Data.DTO
 {
-    public class UpdateEnderecoDTO
+    public class UpdateEnderecoDto
     {
-        [Required(ErrorMessage = "O campo ID é obrigatorio")]
-        [Key]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "O campo Logradouro é obrigatorio")]

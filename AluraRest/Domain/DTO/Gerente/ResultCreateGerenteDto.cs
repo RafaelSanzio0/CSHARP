@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace AluraRest.Data.DTO.Gerente
 {
-    public class ReadGerenteDTO
+    public class ResultCreateGerenteDto
     {
         public int Id { get; set; }
         public string Nome { get; set; }
 
         public object Cinemas { get; set; } // mudei pra OBJECT pra ter acesso ao metodo select no gerenteProfiel
+
+        public DateTime CreateAt { get; set; }
     }
 }

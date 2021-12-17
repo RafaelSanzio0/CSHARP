@@ -11,8 +11,7 @@ namespace FilmesAPI.Data.Dtos
 {
     public class ResultCreateCinemaDto
     {
-        [Key]
-        [Required]
+
         public Guid Id { get; set; }
         public string Nome { get; set; }
         public EnderecoModel Endereco { get; set; }

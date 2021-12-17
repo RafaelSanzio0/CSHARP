@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AluraRest.Data.DTO
 {
-    public class CreateFilmeDTO
+    public class CreateFilmeDto
     {
         [Required(ErrorMessage = "O campo titulo é obrigatorio")]
         public string Titulo { get; set; }

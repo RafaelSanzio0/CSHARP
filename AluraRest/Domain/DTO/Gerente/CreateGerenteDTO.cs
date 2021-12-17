@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 
 namespace AluraRest.Data.DTO.Gerente
 {
-    public class CreateGerenteDTO
+    public class CreateGerenteDto
     {
         public string Nome { get; set; }
-        public int GerenteId { get; set; }
+        //public int GerenteId { get; set; }
+        public DateTime CreatAt { get; set; }
     }
 }

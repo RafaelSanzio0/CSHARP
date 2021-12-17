@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace AluraRest.Data.DTO.Sessao
+namespace Domain.DTO.Sessao
 {
-    public class CreateSessaoDto
+    public class UpdateSessaoDto
     {
         public int CinemaId { get; set; }
         public int FilmeId { get; set; }
