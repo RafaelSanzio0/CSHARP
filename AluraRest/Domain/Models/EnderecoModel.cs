@@ -36,13 +36,15 @@ namespace AluraRest.Models
             set { _numero = value; }
         }
 
-        private int _cinema;
+        /*
+        private CinemaModel _cinema;
 
         [JsonIgnore] // resolve o problema de ciclo de informações, já que ao retornar um Cinema, ele retornará um Endereco, que por sua vez retornará um Cinema repetidamente.
-        public virtual int Cinema // digo que é um lazy
+        public virtual CinemaModel Cinema // digo que é um lazy
         {
             get { return _cinema; }
             set { _cinema = value; }
         }
+        */
     }
 }

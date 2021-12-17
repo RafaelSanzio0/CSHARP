@@ -12,7 +12,7 @@ namespace AluraRest.Models
 {
     public class SessaoModel : BaseModel
     {
-
+        /*
         private CinemaModel _cinema;
 
         public virtual CinemaModel Cinema // isso é ignorado no momemnto da criacao do banco
@@ -20,14 +20,7 @@ namespace AluraRest.Models
             get { return _cinema; }
             set { _cinema = value; }
         }
-
-        private int myVar;
-
-        public int MyProperty
-        {
-            get { return myVar; }
-            set { myVar = value; }
-        }
+        
 
         private FilmeModel _filme;
 
@@ -36,6 +29,7 @@ namespace AluraRest.Models
             get { return _filme; }
             set { _filme = value; }
         }
+        */
 
         private int _filmeId;
 

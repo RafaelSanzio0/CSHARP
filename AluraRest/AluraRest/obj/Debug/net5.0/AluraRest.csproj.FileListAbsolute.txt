@@ -45,3 +45,12 @@ D:\Documentos\CursosTI\Desenvolvimento\CURSO-CSHARP\AluraRest\AluraRest\bin\Debu
 D:\Documentos\CursosTI\Desenvolvimento\CURSO-CSHARP\AluraRest\AluraRest\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\Documentos\CursosTI\Desenvolvimento\CURSO-CSHARP\AluraRest\AluraRest\bin\Debug\net5.0\Castle.Core.dll
 D:\Documentos\CursosTI\Desenvolvimento\CURSO-CSHARP\AluraRest\AluraRest\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\AluraRest\AluraRest\obj\Debug\net5.0\AluraRest.csproj.AssemblyReference.cache
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\AluraRest\AluraRest\obj\Debug\net5.0\AluraRest.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\AluraRest\AluraRest\obj\Debug\net5.0\AluraRest.AssemblyInfoInputs.cache
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\AluraRest\AluraRest\obj\Debug\net5.0\AluraRest.AssemblyInfo.cs
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\AluraRest\AluraRest\obj\Debug\net5.0\AluraRest.csproj.CoreCompileInputs.cache
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\AluraRest\AluraRest\obj\Debug\net5.0\AluraRest.MvcApplicationPartsAssemblyInfo.cache
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\AluraRest\AluraRest\obj\Debug\net5.0\AluraRest.dll
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\AluraRest\AluraRest\obj\Debug\net5.0\ref\AluraRest.dll
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\AluraRest\AluraRest\obj\Debug\net5.0\AluraRest.pdb

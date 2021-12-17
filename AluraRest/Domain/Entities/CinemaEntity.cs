@@ -1,21 +1,28 @@
 ﻿using AluraRest.Models;
-using FilmesAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
+using System.Text;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
-namespace FilmesAPI.Data.Dtos
+namespace Domain.Entities
 {
-    public class ReadCinemaDto
+    public class CinemaEntity : BaseEntity
     {
-        [Key]
         [Required]
-        public int Id { get; set; }
         public string Nome { get; set; }
+
+        [Required]
         public EnderecoModel Endereco { get; set; }
+
+        [Required]
+        public int EnderecoId { get; set; }
+
         public GerenteModel Gerente { get; set; }
+
+        public int GerenteId { get; set; }
+
+        [JsonIgnore]
+        public List<SessaoModel> Sessoes { get; set; }
     }
 }

@@ -1,0 +1,5 @@
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\AluraRest\CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.csproj.AssemblyReference.cache
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\AluraRest\CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\AluraRest\CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.AssemblyInfoInputs.cache
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\AluraRest\CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.AssemblyInfo.cs
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\AluraRest\CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.csproj.CoreCompileInputs.cache

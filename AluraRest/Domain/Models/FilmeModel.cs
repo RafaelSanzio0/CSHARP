@@ -52,6 +52,7 @@ namespace AluraRest.Models
             set { _classificacaoEtaria = value; }
         }
 
+        /*
         private  List<SessaoModel> _sessoes;
 
         [JsonIgnore]
@@ -60,6 +61,7 @@ namespace AluraRest.Models
             get { return _sessoes; }
             set { _sessoes = value; }
         }
+        */
 
     }
 }

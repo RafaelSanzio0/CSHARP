@@ -17,13 +17,15 @@ namespace FilmesAPI.Models
             set { _nome = value; }
         }
 
+        /* COMENTANDO TEMPORARIAMENTE POIS ACREDITO QUE AS RELACOES DEVE FICAR NA ENTITY
         private EnderecoModel _endereco;
 
-        public EnderecoModel NoEnderecome
+        public EnderecoModel Endereco
         {
             get { return _endereco; }
             set { _endereco = value; }
         }
+        */
 
         private int _enderecoId;
 
@@ -33,6 +35,7 @@ namespace FilmesAPI.Models
             set { _enderecoId = value; }
         }
 
+        /*
         private GerenteModel _gerente;
 
         public GerenteModel Gerente
@@ -40,6 +43,8 @@ namespace FilmesAPI.Models
             get { return _gerente; }
             set { _gerente = value; }
         }
+
+        */
 
         private int _gerenteId;
 
@@ -49,6 +54,7 @@ namespace FilmesAPI.Models
             set { _gerenteId = value; }
         }
 
+        /*
         private List<SessaoModel> _sessoes;
 
         [JsonIgnore] // duvida se deixo aqui ou na DTO
@@ -57,6 +63,7 @@ namespace FilmesAPI.Models
             get { return _sessoes; }
             set { _sessoes = value; }
         }
+        */
     }
 }
 

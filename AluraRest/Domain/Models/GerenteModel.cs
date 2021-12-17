@@ -19,6 +19,7 @@ namespace AluraRest.Models
             set { _nome = value; }
         }
 
+        /*
         private List<CinemaModel> _cinemas;
 
         [JsonIgnore]
@@ -27,5 +28,6 @@ namespace AluraRest.Models
             get { return _cinemas; }
             set { _cinemas = value; }
         }
+        */
     }
 }

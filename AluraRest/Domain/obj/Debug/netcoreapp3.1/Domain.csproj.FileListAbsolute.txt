@@ -1,0 +1,5 @@
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\AluraRest\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.AssemblyReference.cache
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\AluraRest\Domain\obj\Debug\netcoreapp3.1\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\AluraRest\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfoInputs.cache
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\AluraRest\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfo.cs
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\AluraRest\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
