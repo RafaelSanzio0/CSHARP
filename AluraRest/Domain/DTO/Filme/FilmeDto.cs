@@ -1,9 +1,9 @@
-﻿using AluraRest.Models;
+﻿using Domain.Dto.Sessao;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.DTO.Filme
+namespace Domain.Dto.Filme
 {
     public class FilmeDto
     {
@@ -13,7 +13,7 @@ namespace Domain.DTO.Filme
         public int ClassificacaoEtaria { get; set; }
         public DateTime HoraDaConsulta { get; set; }
 
-        public List<SessaoModel> Sessoes { get; set; }
+        public List<SessaoDto> Sessoes { get; set; }
 
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.DTO.Endereco
+namespace Domain.Dto.Endereco
 {
     public class ResultUpdateEnderecoDto
     {

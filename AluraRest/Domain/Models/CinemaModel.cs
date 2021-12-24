@@ -1,11 +1,10 @@
-﻿using AluraRest.Models;
-using Domain.Models;
+﻿using Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace FilmesAPI.Models
+namespace Domain.Models
 {
     public class CinemaModel : BaseModel
     {

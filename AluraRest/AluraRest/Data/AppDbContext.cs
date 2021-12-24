@@ -1,6 +1,4 @@
-﻿using AluraRest.Models;
-using FilmesAPI.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace FilmesApi.Data
 {
@@ -11,16 +9,17 @@ namespace FilmesApi.Data
 
         }
 
+        /*
         protected override void OnModelCreating(ModelBuilder builder) // metodo da classe DbContext que é responsavel por explicitar quais definicoes queremos fazer ao criar um modelo
         {
             builder.Entity<Endereco>() // nossa entidade do tipo endereco tem um
-                .HasOne(endereco => endereco.Cinema) // cinema
+                .HasOne(endereco => endereco.Cinema) // 
                 .WithOne(cinema => cinema.Endereco) // logo esse cinema possui um endereco
                 .HasForeignKey<Cinema>(cinema => cinema.EnderecoId); // nossa chave estrangeira ou seja nossa referencia entre as tabelas esta alojado no cinema e é o nosso enderecoID
 
             builder.Entity<Cinema>()
-                .HasOne(cinema => cinema.Gerente) // nosso cinema possui um gerente
-                .WithMany(gerente => gerente.Cinemas) // gerente vai ter um, nenhum ou muitos cinemas
+                .HasOne(cinema => cinema.Gerente) 
+                .WithMany(gerente => gerente.Cinemas) 
                 .HasForeignKey(cinema => cinema.GerenteId); //.IsRequired(false) com isso conseguimos criar um cinema sem um gerente
                                                             //.OnDelete(DeleteBehavior.Restrict); // com isso mudamos de cascade(onde uma delecao de um elemento automaticamente deleta tbm objetos que dependem dele) para restrict (onde nao conseguimos efetuar a delecao)
             builder.Entity<Sessao>()
@@ -39,6 +38,7 @@ namespace FilmesApi.Data
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Gerente> Gerentes { get; set; }
         public DbSet<Sessao> Sessoes { get; set; }
+        */
 
     }
 }

@@ -1,4 +1,4 @@
-﻿using AluraRest.Models;
+﻿using Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,7 +11,7 @@ namespace Domain.Entities
         public string Diretor { get; set; }
         public int Duracao { get; set; }
         public int ClassificacaoEtaria { get; set; }
-        public List<SessaoModel> Sessoes { get; set; }
+        public List<SessaoEntity> Sessoes { get; set; }
     }
 }
 

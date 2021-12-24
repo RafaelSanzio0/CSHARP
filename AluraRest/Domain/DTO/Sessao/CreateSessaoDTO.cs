@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AluraRest.Data.DTO.Sessao
+namespace Domain.Dto.Sessao
 {
     public class CreateSessaoDto
     {

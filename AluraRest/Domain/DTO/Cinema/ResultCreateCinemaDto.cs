@@ -1,21 +1,19 @@
-﻿using AluraRest.Models;
-using FilmesAPI.Models;
+﻿using Domain.Dto.Endereco;
+using Domain.Dto.Gerente;
+using Domain.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace FilmesAPI.Data.Dtos
+namespace Domain.Dto.Cinema
 {
     public class ResultCreateCinemaDto
     {
 
         public Guid Id { get; set; }
         public string Nome { get; set; }
-        public EnderecoModel Endereco { get; set; }
-        public GerenteModel Gerente { get; set; }
+        public EnderecoDto Endereco { get; set; }
+        public GerenteDto Gerente { get; set; }
         public DateTime CreateAt { get; set; }
 
     }

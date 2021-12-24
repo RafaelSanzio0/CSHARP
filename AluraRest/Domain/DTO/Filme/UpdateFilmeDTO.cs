@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AluraRest.Data.DTO
+namespace Domain.Dto.Filme
 {
-    public class UpdateFilmeDTO
+    public class UpdateFilmeDto
     {
         [Required(ErrorMessage = "O campo titulo é obrigatorio")]
         public string Titulo { get; set; }

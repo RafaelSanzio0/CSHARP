@@ -1,4 +1,3 @@
-using AluraRest.Data;
 using FilmesApi.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

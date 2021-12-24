@@ -1,9 +1,8 @@
-﻿using FilmesAPI.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.DTO.Gerente
+namespace Domain.Dto.Gerente
 {
     public class UpdateGerenteDto
     {

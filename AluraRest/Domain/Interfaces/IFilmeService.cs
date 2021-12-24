@@ -1,5 +1,4 @@
-﻿using AluraRest.Data.DTO;
-using Domain.DTO.Filme;
+﻿using Domain.Dto.Filme;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,7 +11,7 @@ namespace Domain.Interfaces
         Task<FilmeDto> Get(Guid id);
         Task<IEnumerable<FilmeDto>> GetAll();
         Task<ResultCreateFilmeDto> Post(CreateFilmeDto filme);
-        Task<ResultUpdateFilmeDto> Put(UpdateFilmeDTO filme);
+        Task<ResultUpdateFilmeDto> Put(UpdateFilmeDto filme);
         Task<bool> Delete(Guid id);
     }
 }

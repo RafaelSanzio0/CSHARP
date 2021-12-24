@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.DTO.Sessao
+namespace Domain.Dto.Sessao
 {
     public class UpdateSessaoDto
     {

@@ -1,4 +1,4 @@
-﻿using FilmesAPI.Models;
+﻿using Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,6 +11,6 @@ namespace Domain.Entities
         public string Nome { get; set; }
 
         [JsonIgnore]
-        public List<CinemaModel> Cinemas { get; set; }
+        public List<CinemaEntity> Cinemas { get; set; }
     }
 }

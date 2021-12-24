@@ -1,6 +1,4 @@
-﻿using AluraRest.Data.DTO;
-using Domain.DTO.Endereco;
-using FilmesAPI.Data.Dtos;
+﻿using Domain.Dto.Endereco;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,7 +10,7 @@ namespace Domain.Interfaces
     {
         Task<EnderecoDto> Get(Guid id);
         Task<IEnumerable<EnderecoDto>> GetAll();
-        Task<ResultCreateCinemaDto> Post(CreateEnderecoDto endereco);
+        Task<ResultCreateEnderecoDto> Post(CreateEnderecoDto endereco);
         Task<ResultUpdateEnderecoDto> Put(UpdateEnderecoDto endereco);
         Task<bool> Delete(Guid id);
     }

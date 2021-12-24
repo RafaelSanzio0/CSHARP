@@ -1,5 +1,4 @@
-﻿using AluraRest.Models;
-using FilmesAPI.Models;
+﻿using Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,13 +10,11 @@ namespace Domain.Entities
     public class SessaoEntity : BaseEntity
     {
 
-        public CinemaModel Cinema { get; set; }
+        public CinemaEntity Cinema { get; set; }
         public int CinemaId { get; set; }
 
-
-        public FilmeModel Filme { get; set; }
+        public FilmeEntity Filme { get; set; }
         public int FilmeId { get; set; }
-
 
         public DateTime HorarioDeEncerramento { get; set; }
 

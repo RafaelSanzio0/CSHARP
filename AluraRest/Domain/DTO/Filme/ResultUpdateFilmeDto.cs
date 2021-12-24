@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.DTO.Filme
+namespace Domain.Dto.Filme
 {
     public class ResultUpdateFilmeDto
     {

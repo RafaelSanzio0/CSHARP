@@ -1,14 +1,14 @@
 Passo a Passo
 ----------------------------------------------------------------------------------------
 Api.Domain
-	1 - Entities (Entidades)
-	2 - Dtos
-	3 - Interfaces
-	4 - Models
+	1 - Entities (Entidades) --criado
+	2 - Dtos --criado
+	3 - Interfaces --criado
+	4 - Models --criado
 	
 Api.Data
-	1 - Mapping Entities (Mapear as Entidades)
-	2 - MyContext (Atualizar)
+	1 - Mapping Entities (Mapear as Entidades) -- criado
+	2 - MyContext (Atualizar) -- criado
 	3 - Fazer Migrações
 	4 - Atualizar o Banco de Dados
 	5 - Implementations (Implementação da Classe BaseEntity)
@@ -20,7 +20,7 @@ Data.Test
 
 
 ----------------------------------------------------------------------------------------
-Api.CrossCutting
+Api.CrossCutting -- criado
        1 - DtoToModelProfile
        2 - EntityToDtoProfile
        3 - ModelToEntityProfile

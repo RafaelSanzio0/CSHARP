@@ -1,5 +1,4 @@
-﻿using AluraRest.Data.DTO.Sessao;
-using Domain.DTO.Sessao;
+﻿using Domain.Dto.Sessao;
 using System;
 using System.Collections.Generic;
 using System.Text;

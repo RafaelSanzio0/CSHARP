@@ -1,5 +1,4 @@
 ﻿using Domain.Models;
-using FilmesAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 
  // classe referente a uma tabela de relacionamento entre N to N filme e cinema
 
-namespace AluraRest.Models
+namespace Domain.Models
 {
     public class SessaoModel : BaseModel
     {

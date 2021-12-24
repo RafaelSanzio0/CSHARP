@@ -1,6 +1,4 @@
 ﻿using Domain.Dto.Cinema;
-using Domain.DTO.Cinema;
-using FilmesAPI.Data.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Text;

@@ -1,4 +1,7 @@
-﻿using AluraRest.Models;
+﻿using Domain.Dto.Endereco;
+using Domain.Dto.Gerente;
+using Domain.Dto.Sessao;
+using Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,11 +13,11 @@ namespace Domain.Dto.Cinema
         public Guid Id { get; set; }
         public string Nome { get; set; }
 
-        public EnderecoModel Endereco { get; set; }
+        public EnderecoDto Endereco { get; set; }
 
-        public GerenteModel Gerente { get; set; }
+        public GerenteDto Gerente { get; set; }
 
-        public List<SessaoModel> Sessoes { get; set; }
+        public List<SessaoDto> Sessoes { get; set; }
 
     }
 }

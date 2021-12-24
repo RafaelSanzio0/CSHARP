@@ -1,4 +1,4 @@
-﻿using AluraRest.Models;
+﻿using Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -13,16 +13,16 @@ namespace Domain.Entities
         public string Nome { get; set; }
 
         [Required]
-        public EnderecoModel Endereco { get; set; }
+        public EnderecoEntity Endereco { get; set; }
 
         [Required]
         public int EnderecoId { get; set; }
 
-        public GerenteModel Gerente { get; set; }
+        public GerenteEntity Gerente { get; set; }
 
         public int GerenteId { get; set; }
 
         [JsonIgnore]
-        public List<SessaoModel> Sessoes { get; set; }
+        public List<SessaoEntity> Sessoes { get; set; }
     }
 }

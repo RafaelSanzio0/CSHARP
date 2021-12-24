@@ -1,4 +1,4 @@
-﻿using FilmesAPI.Models;
+﻿using Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -17,7 +17,7 @@ namespace Domain.Entities
         public int Numero { get; set; }
 
         [JsonIgnore]
-        public virtual CinemaModel Cinema { get; set; }
+        public virtual CinemaEntity Cinema { get; set; }
 
     }
 }

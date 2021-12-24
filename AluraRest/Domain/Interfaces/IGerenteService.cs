@@ -1,6 +1,4 @@
-﻿using AluraRest.Data.DTO.Gerente;
-using Domain.Dto.Cinema;
-using Domain.DTO.Gerente;
+﻿using Domain.Dto.Gerente;
 using System;
 using System.Collections.Generic;
 using System.Text;
