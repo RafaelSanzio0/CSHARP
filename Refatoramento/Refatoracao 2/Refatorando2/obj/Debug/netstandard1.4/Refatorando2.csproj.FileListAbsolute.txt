@@ -1,0 +1,10 @@
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\Refatoramento\Refatorando2\bin\Debug\netstandard1.4\Refatorando2.deps.json
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\Refatoramento\Refatorando2\bin\Debug\netstandard1.4\Refatorando2.dll
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\Refatoramento\Refatorando2\bin\Debug\netstandard1.4\Refatorando2.pdb
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\Refatoramento\Refatorando2\obj\Debug\netstandard1.4\Refatorando2.csproj.AssemblyReference.cache
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\Refatoramento\Refatorando2\obj\Debug\netstandard1.4\Refatorando2.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\Refatoramento\Refatorando2\obj\Debug\netstandard1.4\Refatorando2.AssemblyInfoInputs.cache
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\Refatoramento\Refatorando2\obj\Debug\netstandard1.4\Refatorando2.AssemblyInfo.cs
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\Refatoramento\Refatorando2\obj\Debug\netstandard1.4\Refatorando2.csproj.CoreCompileInputs.cache
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\Refatoramento\Refatorando2\obj\Debug\netstandard1.4\Refatorando2.dll
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\Refatoramento\Refatorando2\obj\Debug\netstandard1.4\Refatorando2.pdb
