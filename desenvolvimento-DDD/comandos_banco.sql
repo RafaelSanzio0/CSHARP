@@ -8,3 +8,6 @@ SELECT * FROM [Uf]
 SELECT * FROM [Municipio]
 
 SELECT * FROM [Cep]
+
+-- retorna tabelas de um banco
+SELECT * FROM information_schema.tables;

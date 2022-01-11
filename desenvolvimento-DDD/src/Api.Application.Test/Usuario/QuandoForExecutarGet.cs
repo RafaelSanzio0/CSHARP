@@ -15,7 +15,6 @@ namespace Api.Application.Test
     public class QuandoForExecutarGet
     {
         private UsersController _usersController;
-        private Mock<IUrlHelper> _url = new Mock<IUrlHelper>();
         private Mock<IUserService> _serviceMock = new Mock<IUserService>();
 
         [Fact(DisplayName = "É possivel executar o GET")]

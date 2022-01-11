@@ -41,7 +41,7 @@ namespace Api.Application.Controllers {
 
         [Authorize("Bearer")]
         [HttpGet]
-        [Route ("{id}", Name = "GetWithId")] //dando nome para a rota
+        [Route ("{id}", Name = "GetUserWithId")] //dando nome para a rota
         public async Task<ActionResult> Get(Guid id)
         {
             if(!ModelState.IsValid)

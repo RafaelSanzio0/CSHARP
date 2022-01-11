@@ -46,8 +46,9 @@ namespace Api.Data.Test
                 {
                     Cep = "13.481-001",
                     Logradouro = Faker.Address.StreetName(),
-                    Numero = "0 até 2000",
-                    MunicipioID = _registroCriado.Id // associa o ID do municpio ao cep criado
+                    Numero = Faker.RandomNumber.Next(0, 999999).ToString(),
+                    MunicipioID = _entityMunicipio.Id, // associa o ID do municpio ao cep criado
+                    MunicipioEntity = _entityMunicipio
                 };
 
                 var _registroCriadoCep = await _repositorio.InsertAsync(_entityCep);
