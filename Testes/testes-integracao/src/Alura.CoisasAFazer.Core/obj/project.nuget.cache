@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "LvPGWOjyllMY/dN4kfuGFBsynE94DG5QlRkcyuF5WmsQW++r2OFEnh1JUqJonSj06fVxlx8B4spafkmk15AaCg==",
+  "success": true,
+  "projectFilePath": "D:\\Documentos\\CursosTI\\Desenvolvimento\\Importantes\\CSHARP-CURSO\\Testes\\testes-integracao\\src\\Alura.CoisasAFazer.Core\\Alura.CoisasAFazer.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rafae\\.nuget\\packages\\mediatr\\7.0.0\\mediatr.7.0.0.nupkg.sha512",
+    "C:\\Users\\rafae\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\rafae\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
