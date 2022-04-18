@@ -24,6 +24,7 @@ namespace Alura.Estacionamento.Tests
         }
 
         [Fact]
+        [Trait("Funcionalidade", "frear")]
         public void TestaFrear()
         {
             // arrange
@@ -36,7 +37,7 @@ namespace Alura.Estacionamento.Tests
             Assert.Equal(-150, veiculo.VelocidadeAtual);
         }
 
-        [Fact]
+        [Fact(DisplayName = "TESTE 2")] // ALTERA O NOME EXIBIDO NO GERENCIADOR DE TESTE
         public void TestaTipoVeiculo()
         {
             // arrange
@@ -48,6 +49,20 @@ namespace Alura.Estacionamento.Tests
 
             // assert
             Assert.Equal(tipoEsperado, veiculo.Tipo);
+        }
+
+        [Theory]
+        [InlineData("agr1","arg2","arg3")]
+        [InlineData("agr4", "arg5", "arg6")]
+        public void Testa(string arg, string args, string argsss)
+        {
+
+        }
+
+        [Fact(Skip = "teste n implementado")]
+        public void TestSkip()
+        {
+            
         }
     }
 }
