@@ -1,6 +1,7 @@
 using Xunit;
 using Alura.Estacionamento.Alura.Estacionamento.Modelos;
 using Alura.Estacionamento.Modelos;
+using System;
 
 namespace Alura.Estacionamento.Tests
 {
@@ -63,6 +64,15 @@ namespace Alura.Estacionamento.Tests
         public void TestSkip()
         {
             
+        }
+
+        public void AssertComException()
+        {
+            // Assert
+            Assert.Throws<Exception>(
+                () => new Veiculo("ab").Acelerar(3)
+            );;
+                
         }
     }
 }
