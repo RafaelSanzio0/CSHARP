@@ -13021,23 +13021,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\copacabana_alura\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\rafae\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\copacabana_alura\\Source\\Repos\\testes-integracao\\src\\Alura.CoisasAFazer.WebApp\\Alura.CoisasAFazer.WebApp.csproj",
+      "projectUniqueName": "D:\\Documentos\\CursosTI\\Desenvolvimento\\Importantes\\CSHARP-CURSO\\Testes\\testes-integracao\\src\\Alura.CoisasAFazer.WebApp\\Alura.CoisasAFazer.WebApp.csproj",
       "projectName": "Alura.CoisasAFazer.WebApp",
-      "projectPath": "C:\\Users\\copacabana_alura\\Source\\Repos\\testes-integracao\\src\\Alura.CoisasAFazer.WebApp\\Alura.CoisasAFazer.WebApp.csproj",
-      "packagesPath": "C:\\Users\\copacabana_alura\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\copacabana_alura\\Source\\Repos\\testes-integracao\\src\\Alura.CoisasAFazer.WebApp\\obj\\",
+      "projectPath": "D:\\Documentos\\CursosTI\\Desenvolvimento\\Importantes\\CSHARP-CURSO\\Testes\\testes-integracao\\src\\Alura.CoisasAFazer.WebApp\\Alura.CoisasAFazer.WebApp.csproj",
+      "packagesPath": "C:\\Users\\rafae\\.nuget\\packages\\",
+      "outputPath": "D:\\Documentos\\CursosTI\\Desenvolvimento\\Importantes\\CSHARP-CURSO\\Testes\\testes-integracao\\src\\Alura.CoisasAFazer.WebApp\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\copacabana_alura\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rafae\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13049,15 +13045,16 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
+          "targetAlias": "netcoreapp2.2",
           "projectReferences": {
-            "C:\\Users\\copacabana_alura\\Source\\Repos\\testes-integracao\\src\\Alura.CoisasAFazer.Core\\Alura.CoisasAFazer.Core.csproj": {
-              "projectPath": "C:\\Users\\copacabana_alura\\Source\\Repos\\testes-integracao\\src\\Alura.CoisasAFazer.Core\\Alura.CoisasAFazer.Core.csproj"
+            "D:\\Documentos\\CursosTI\\Desenvolvimento\\Importantes\\CSHARP-CURSO\\Testes\\testes-integracao\\src\\Alura.CoisasAFazer.Core\\Alura.CoisasAFazer.Core.csproj": {
+              "projectPath": "D:\\Documentos\\CursosTI\\Desenvolvimento\\Importantes\\CSHARP-CURSO\\Testes\\testes-integracao\\src\\Alura.CoisasAFazer.Core\\Alura.CoisasAFazer.Core.csproj"
             },
-            "C:\\Users\\copacabana_alura\\Source\\Repos\\testes-integracao\\src\\Alura.CoisasAFazer.Infrastructure\\Alura.CoisasAFazer.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\copacabana_alura\\Source\\Repos\\testes-integracao\\src\\Alura.CoisasAFazer.Infrastructure\\Alura.CoisasAFazer.Infrastructure.csproj"
+            "D:\\Documentos\\CursosTI\\Desenvolvimento\\Importantes\\CSHARP-CURSO\\Testes\\testes-integracao\\src\\Alura.CoisasAFazer.Infrastructure\\Alura.CoisasAFazer.Infrastructure.csproj": {
+              "projectPath": "D:\\Documentos\\CursosTI\\Desenvolvimento\\Importantes\\CSHARP-CURSO\\Testes\\testes-integracao\\src\\Alura.CoisasAFazer.Infrastructure\\Alura.CoisasAFazer.Infrastructure.csproj"
             },
-            "C:\\Users\\copacabana_alura\\Source\\Repos\\testes-integracao\\src\\Alura.CoisasAFazer.Services\\Alura.CoisasAFazer.Services.csproj": {
-              "projectPath": "C:\\Users\\copacabana_alura\\Source\\Repos\\testes-integracao\\src\\Alura.CoisasAFazer.Services\\Alura.CoisasAFazer.Services.csproj"
+            "D:\\Documentos\\CursosTI\\Desenvolvimento\\Importantes\\CSHARP-CURSO\\Testes\\testes-integracao\\src\\Alura.CoisasAFazer.Services\\Alura.CoisasAFazer.Services.csproj": {
+              "projectPath": "D:\\Documentos\\CursosTI\\Desenvolvimento\\Importantes\\CSHARP-CURSO\\Testes\\testes-integracao\\src\\Alura.CoisasAFazer.Services\\Alura.CoisasAFazer.Services.csproj"
             }
           }
         }
@@ -13070,6 +13067,7 @@
     },
     "frameworks": {
       "netcoreapp2.2": {
+        "targetAlias": "netcoreapp2.2",
         "dependencies": {
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
@@ -13094,10 +13092,16 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
