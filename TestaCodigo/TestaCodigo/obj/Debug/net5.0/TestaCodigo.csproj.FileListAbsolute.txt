@@ -1,0 +1,16 @@
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\TestaCodigo\TestaCodigo\bin\Debug\net5.0\TestaCodigo.exe
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\TestaCodigo\TestaCodigo\bin\Debug\net5.0\TestaCodigo.deps.json
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\TestaCodigo\TestaCodigo\bin\Debug\net5.0\TestaCodigo.runtimeconfig.json
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\TestaCodigo\TestaCodigo\bin\Debug\net5.0\TestaCodigo.runtimeconfig.dev.json
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\TestaCodigo\TestaCodigo\bin\Debug\net5.0\TestaCodigo.dll
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\TestaCodigo\TestaCodigo\bin\Debug\net5.0\ref\TestaCodigo.dll
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\TestaCodigo\TestaCodigo\bin\Debug\net5.0\TestaCodigo.pdb
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\TestaCodigo\TestaCodigo\obj\Debug\net5.0\TestaCodigo.csproj.AssemblyReference.cache
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\TestaCodigo\TestaCodigo\obj\Debug\net5.0\TestaCodigo.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\TestaCodigo\TestaCodigo\obj\Debug\net5.0\TestaCodigo.AssemblyInfoInputs.cache
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\TestaCodigo\TestaCodigo\obj\Debug\net5.0\TestaCodigo.AssemblyInfo.cs
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\TestaCodigo\TestaCodigo\obj\Debug\net5.0\TestaCodigo.csproj.CoreCompileInputs.cache
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\TestaCodigo\TestaCodigo\obj\Debug\net5.0\TestaCodigo.dll
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\TestaCodigo\TestaCodigo\obj\Debug\net5.0\ref\TestaCodigo.dll
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\TestaCodigo\TestaCodigo\obj\Debug\net5.0\TestaCodigo.pdb
+D:\Documentos\CursosTI\Desenvolvimento\CSHARP-CURSO\TestaCodigo\TestaCodigo\obj\Debug\net5.0\TestaCodigo.genruntimeconfig.cache

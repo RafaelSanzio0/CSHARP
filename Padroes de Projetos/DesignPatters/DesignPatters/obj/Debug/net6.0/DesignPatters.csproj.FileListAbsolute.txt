@@ -1,0 +1,15 @@
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Padroes de Projetos\DesignPatters\DesignPatters\bin\Debug\net6.0\DesignPatters.exe
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Padroes de Projetos\DesignPatters\DesignPatters\bin\Debug\net6.0\DesignPatters.deps.json
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Padroes de Projetos\DesignPatters\DesignPatters\bin\Debug\net6.0\DesignPatters.runtimeconfig.json
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Padroes de Projetos\DesignPatters\DesignPatters\bin\Debug\net6.0\DesignPatters.dll
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Padroes de Projetos\DesignPatters\DesignPatters\bin\Debug\net6.0\DesignPatters.pdb
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Padroes de Projetos\DesignPatters\DesignPatters\obj\Debug\net6.0\DesignPatters.csproj.AssemblyReference.cache
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Padroes de Projetos\DesignPatters\DesignPatters\obj\Debug\net6.0\DesignPatters.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Padroes de Projetos\DesignPatters\DesignPatters\obj\Debug\net6.0\DesignPatters.AssemblyInfoInputs.cache
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Padroes de Projetos\DesignPatters\DesignPatters\obj\Debug\net6.0\DesignPatters.AssemblyInfo.cs
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Padroes de Projetos\DesignPatters\DesignPatters\obj\Debug\net6.0\DesignPatters.csproj.CoreCompileInputs.cache
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Padroes de Projetos\DesignPatters\DesignPatters\obj\Debug\net6.0\DesignPatters.dll
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Padroes de Projetos\DesignPatters\DesignPatters\obj\Debug\net6.0\refint\DesignPatters.dll
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Padroes de Projetos\DesignPatters\DesignPatters\obj\Debug\net6.0\DesignPatters.pdb
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Padroes de Projetos\DesignPatters\DesignPatters\obj\Debug\net6.0\DesignPatters.genruntimeconfig.cache
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Padroes de Projetos\DesignPatters\DesignPatters\obj\Debug\net6.0\ref\DesignPatters.dll
