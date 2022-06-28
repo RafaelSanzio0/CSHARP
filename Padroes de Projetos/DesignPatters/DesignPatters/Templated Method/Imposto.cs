@@ -1,7 +1,19 @@
 ﻿namespace DesignPatters.Templated_Method
 {
-    public interface Imposto
+    public abstract class Imposto
     {
-        double Calcula(double orcamento);
+        public Imposto? OutroImposto { get; set; }
+
+        public Imposto(Imposto outroImposto)
+        {
+            OutroImposto = outroImposto;
+        }
+
+        public Imposto()
+        {
+        }
+
+        public abstract double Calcula(double orcamento);
+        public abstract double CalculoDoOutroImposto(double orcamento);
     }
 }

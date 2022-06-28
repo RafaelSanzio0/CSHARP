@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
 namespace DesignPatters.Templated_Method
 {
     internal class Program
@@ -16,3 +17,4 @@ namespace DesignPatters.Templated_Method
         }
     }
 }
+*/
