@@ -1,0 +1,15 @@
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Collections\Collections1\Collections1\bin\Debug\net6.0\Collections1.exe
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Collections\Collections1\Collections1\bin\Debug\net6.0\Collections1.deps.json
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Collections\Collections1\Collections1\bin\Debug\net6.0\Collections1.runtimeconfig.json
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Collections\Collections1\Collections1\bin\Debug\net6.0\Collections1.dll
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Collections\Collections1\Collections1\bin\Debug\net6.0\Collections1.pdb
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Collections\Collections1\Collections1\obj\Debug\net6.0\Collections1.csproj.AssemblyReference.cache
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Collections\Collections1\Collections1\obj\Debug\net6.0\Collections1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Collections\Collections1\Collections1\obj\Debug\net6.0\Collections1.AssemblyInfoInputs.cache
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Collections\Collections1\Collections1\obj\Debug\net6.0\Collections1.AssemblyInfo.cs
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Collections\Collections1\Collections1\obj\Debug\net6.0\Collections1.csproj.CoreCompileInputs.cache
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Collections\Collections1\Collections1\obj\Debug\net6.0\Collections1.dll
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Collections\Collections1\Collections1\obj\Debug\net6.0\refint\Collections1.dll
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Collections\Collections1\Collections1\obj\Debug\net6.0\Collections1.pdb
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Collections\Collections1\Collections1\obj\Debug\net6.0\Collections1.genruntimeconfig.cache
+D:\Documentos\CursosTI\Desenvolvimento\Importantes\CSHARP-CURSO\Collections\Collections1\Collections1\obj\Debug\net6.0\ref\Collections1.dll
